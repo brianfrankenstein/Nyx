@@ -22,7 +22,7 @@ class Brain:
 
     def handle_message(self, user_text):
         #This will become Short term memory injection
-        #self.chat_history.append({"role": "user", "content": user_text})
+        self.chat_history.append({"role": "user", "content": user_text})
 
         full_prompt = self.chat_history
         relevant_memories = self.memory_store.queryMemories(user_text)
