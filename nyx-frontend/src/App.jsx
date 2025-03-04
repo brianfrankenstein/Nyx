@@ -24,7 +24,7 @@ function App() {
       const data = await response.json();
       setMessages((prevMessages) => [
         ...prevMessages,
-        { text: data.response, sender: "bot" },
+        { text: data.expressed_response, sender: "bot" },
       ]);
     } catch (error) {
       console.error("Error:", error);
