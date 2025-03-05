@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import Login from './login';
 
 function App() {
+  const [user, setUser] = useState(null); // { username, token }
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState(""); //track input field state
 
@@ -36,6 +38,10 @@ function App() {
   
     setInput(""); // Clear input field
   };
+
+  if(!user) {
+    return <Login onLogin={setUser} />;
+  }
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial", backgroundColor: "#111", color: "#0f0" }}>
