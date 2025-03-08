@@ -1,7 +1,7 @@
 import os
-from brain import Brain
-from utils.dbmodels import SessionLocal, User, init_db
-from utils.security import hash_password, verify_password
+from src.brain import Brain
+from src.utils.dbmodels import SessionLocal, User, init_db
+from src.utils.security import hash_password, verify_password
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Depends, status

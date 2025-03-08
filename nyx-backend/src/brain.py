@@ -1,7 +1,7 @@
 import json
-from memory import Memory
-from llm_client import LLMClient
-from structured_output import parse_structured_response
+from src.memory import Memory
+from src.llm_client import LLMClient
+from src.structured_output import parse_structured_response
 
 memorable_intructions = """Think about how the input relates to you as an individual, how it relates to your companion, or if it is not personal. 
                         If you learned something new about yourself in the user input or in thinking of your response, put it in self_insights, including any new information about yourself that you will express. 
