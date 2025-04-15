@@ -6,12 +6,12 @@ WORKDIR /nyx
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the entire project contents into the container
 COPY . .
 
 ENV PYTHONPATH=/nyx
 
-# Command to start Nyx (adjust to your actual entry point)
-CMD ["python", "src/main.py"]
+# Ensure you're listening on port 8080
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]

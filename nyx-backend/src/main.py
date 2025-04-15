@@ -12,6 +12,10 @@ load_dotenv() # load environment variables from .env file
 
 app = FastAPI()
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # You can restrict this to your frontend's URL if needed.
@@ -80,3 +84,7 @@ async def login(user: UserSchema):
     if not stored_user or not verify_password(user.password, stored_user.hashed_password):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     return {"msg": "Login successful"}
+
+@app.get("/healthcheck")
+async def healthcheck():
+    return {"status": "ok"}

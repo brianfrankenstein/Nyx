@@ -9,7 +9,7 @@ function Login({ onLogin }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://172.26.226.212:8080/login", {
+      const response = await fetch("https://nyx-backend-52886619499.europe-west2.run.app/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })

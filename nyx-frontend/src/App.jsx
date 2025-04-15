@@ -13,7 +13,7 @@ function App() {
     setMessages([...messages, { text: message, sender: "user" }]);
   
     try {
-      const response = await fetch("http://172.26.226.212:8080/chat", {  
+      const response = await fetch("https://nyx-backend-52886619499.europe-west2.run.app/chat", {  
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userMessage),
